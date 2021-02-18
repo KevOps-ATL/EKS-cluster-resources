@@ -1,7 +1,8 @@
 resource "aws_subnet" "pubsub1" {
-  vpc_id            = var.vpc_id
-  cidr_block        = "10.0.1.0/25"
-  availability_zone = "us-east-1a"
+  vpc_id                  = var.vpc_id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "us-east-1a"
+  map_public_ip_on_launch = true
 
   tags = {
     name = "pubsub1"
@@ -10,9 +11,10 @@ resource "aws_subnet" "pubsub1" {
 }
 
 resource "aws_subnet" "pubsub2" {
-  vpc_id            = var.vpc_id
-  cidr_block        = "10.0.1.0/25"
-  availability_zone = "us-east-1b"
+  vpc_id                  = var.vpc_id
+  cidr_block              = "10.0.2.0/24"
+  availability_zone       = "us-east-1b"
+  map_public_ip_on_launch = true
 
   tags = {
     name = "pubsub2"
@@ -20,9 +22,10 @@ resource "aws_subnet" "pubsub2" {
 
 }
 resource "aws_subnet" "pubsub3" {
-  vpc_id            = var.vpc_id
-  cidr_block        = "10.0.1.0/25"
-  availability_zone = "us-east-1c"
+  vpc_id                  = var.vpc_id
+  cidr_block              = "10.0.3.0/24"
+  availability_zone       = "us-east-1c"
+  map_public_ip_on_launch = true
 
   tags = {
     name = "pubsub3"
@@ -31,7 +34,7 @@ resource "aws_subnet" "pubsub3" {
 }
 resource "aws_subnet" "privsub1" {
   vpc_id            = var.vpc_id
-  cidr_block        = "10.0.1.0/25"
+  cidr_block        = "10.0.4.0/24"
   availability_zone = "us-east-1a"
 
   tags = {
@@ -41,7 +44,7 @@ resource "aws_subnet" "privsub1" {
 }
 resource "aws_subnet" "privsub2" {
   vpc_id            = var.vpc_id
-  cidr_block        = "10.0.1.0/25"
+  cidr_block        = "10.0.5.0/24"
   availability_zone = "us-east-1b"
 
   tags = {
@@ -51,7 +54,7 @@ resource "aws_subnet" "privsub2" {
 }
 resource "aws_subnet" "privsub3" {
   vpc_id            = var.vpc_id
-  cidr_block        = "10.0.1.0/25"
+  cidr_block        = "10.0.6.0/24"
   availability_zone = "us-east-1c"
 
   tags = {

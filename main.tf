@@ -4,7 +4,8 @@ module "aws_network" {
 }
 
 module "nat" {
-  source = "./modules/nat"
+  source    = "./modules/nat"
+  subnet_id = module.subnets.subnet_id
 }
 
 module "igw" {
@@ -16,3 +17,10 @@ module "subnets" {
   source = "./modules/subnets"
   vpc_id = module.aws_network.vpc_id
 }
+
+module "ec2" {
+  source    = "./modules/ec2"
+  vpc_id    = module.aws_network.vpc_id
+  subnet_id = module.subnets.subnet_id
+}
+
