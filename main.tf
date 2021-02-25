@@ -17,10 +17,3 @@ module "subnets" {
   source = "./modules/subnets"
   vpc_id = module.aws_network.vpc_id
 }
-
-module "ec2" {
-  source    = "./modules/ec2"
-  vpc_id    = module.aws_network.vpc_id
-  subnet_id = module.subnets.subnet_id
-}
-
